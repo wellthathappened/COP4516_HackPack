@@ -51,13 +51,9 @@ public class Graphing
         {
             currentPoint.visited = true;
         
-            for(int i = 0;i < currentPoint.connections.length;i++)
-            {
-                if(currentPoint.connections[i].visited == false)
-                {
-                    dfs(currentPoint.connections[i]);
-                }
-            }
+            for(Point connection : currentPoint.connections)
+                if(connection.visited == false)
+                    dfs(connection);
         }
     }
     
@@ -71,14 +67,12 @@ public class Graphing
         {
             Point node = pointsList.remove();
             
-            for (Point connection : node.connections)
-            {
-                if (connection.visited == false)
+            for(Point connection : node.connections)
+                if(connection.visited == false)
                 {
                     connection.visited = true;
                     pointsList.add(connection);
                 }
-            }
         }
     }
 }
