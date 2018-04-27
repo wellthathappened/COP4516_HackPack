@@ -1,29 +1,22 @@
-public class permutations
-{
-    public static void main(String[] args)
-    {
-        int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        
-        perms(a);
-    }
-    
-    public static int[][] perms(int [] a)
-    {
-        int[][] temp = new int[a.length][a.length];
-        
-	// Match every element in array with every other element including itself
-        for(int i = 0;i < a.length;i++)
-        {
-            for(int j = 0;j < a.length;j++)
-            {
-                temp[i][j] = (a[i] + a[j]);
-                
-                //System.out.print(i + ": " + temp[i][j] + ", ");
-            }
-            
-            //System.out.println();
-        }
-        
-        return temp;
-    }
+public class permutations {
+	public static void main(String[] args) {
+		int[] values = {1, 2, 3, 4};
+		int[] perm = new int[values.length];
+		boolean[] used = new boolean[values.length];
+		perms(values, perm, used, 0);
+	}
+	public static void perms(int[] values, int[] perm, boolean[] used, int depth) {
+		if (depth == values.length) {
+			System.out.println(java.util.Arrays.toString(perm));
+			return;
+		}
+		for(int i = 0; i < values.length; i++) {
+			if (!used[i]) {
+				used[i] = true;
+				perm[depth] = values[i];
+				perms(values, perm, used, depth + 1);
+				used[i] = false;
+			}
+		}
+	}
 }
