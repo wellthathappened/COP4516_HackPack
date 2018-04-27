@@ -35,19 +35,19 @@ If you want to use code from online because it's better than yours, please label
 - Permutation generation
 	- Ian: [permutations.java](code/permutations.java)
 - Combination generation
-	- Ian: combinations.java
+	- Ian: [combinations.java](code/combinations.java)
 - GCD
-	- Ian: gcd.java
+	- Ian: [gcd.java](code/gcd.java)
 - LCM
-	- **Unclaimed**
+	- Ian: [lcm.java](code/lcm.java)
 - Kruskal's Algorithm
 	- **Unclaimed**
 - Depth First Search
-	- Ian: Graphing.java
+	- Ian: [Graphing.java](code/Graphing.java)
 - Breath First Search
-	- Ian: Graphing.java
+	- Ian: [Graphing.java](code/Graphing.java)
 - Topological Sort
-	- Ian
+	- Ian: [toposort.java](code/toposort.java)
 - Floyd-Warshall's Algorithm
 	- Harrison
 - Dijkstra's Algorithm
@@ -61,7 +61,7 @@ If you want to use code from online because it's better than yours, please label
 - Longest Common Subsequence DP
 	- **Unclaimed**
 - Knapsack DP
-	- Ian
+	- Ian: [knapsack.java](code/knapsack.java)
 - Line-Line Intersection
 	- **Unclaimed**
 - Line-Plane Intersection
