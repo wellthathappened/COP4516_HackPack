@@ -41,7 +41,7 @@ If you want to use code from online because it's better than yours, please label
 - LCM
 	- Ian and Harrison: [math.java](code/math.java)
 - Kruskal's Algorithm
-	- Ian
+	- Ian: [kruskals.java](code/kruskals.java) **Unfinished**
 - Depth First Search
 	- Ian: [Graph.java](code/Graph.java)
 - Breath First Search
