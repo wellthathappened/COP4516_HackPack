@@ -47,7 +47,7 @@ If you want to use code from online because it's better than yours, please label
 - Breath First Search
 	- Ian: [Graphing.java](code/Graphing.java)
 - Topological Sort
-	- Ian
+	- Ian: [toposort.java](code/toposort.java)
 - Floyd-Warshall's Algorithm
 	- Harrison
 - Dijkstra's Algorithm
@@ -61,7 +61,7 @@ If you want to use code from online because it's better than yours, please label
 - Longest Common Subsequence DP
 	- **Unclaimed**
 - Knapsack DP
-	- Ian
+	- Ian: [knapsack.java](code/knapsack.java)
 - Line-Line Intersection
 	- **Unclaimed**
 - Line-Plane Intersection
