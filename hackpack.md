@@ -35,17 +35,17 @@ If you want to use code from online because it's better than yours, please label
 - Permutation generation
 	- Ian: [permutations.java](code/permutations.java)
 - Combination generation
-	- Ian: combinations.java
+	- Ian: [combinations.java](code/combinations.java)
 - GCD
-	- Ian: gcd.java
+	- Ian and Harrison: [math.java](code/math.java)
 - LCM
-	- **Unclaimed**
+	- Ian and Harrison: [math.java](code/math.java)
 - Kruskal's Algorithm
 	- **Unclaimed**
 - Depth First Search
-	- Ian: Graphing.java
+	- Ian: [Graphing.java](code/Graphing.java)
 - Breath First Search
-	- Ian: Graphing.java
+	- Ian: [Graphing.java](code/Graphing.java)
 - Topological Sort
 	- Ian
 - Floyd-Warshall's Algorithm
