@@ -5,6 +5,12 @@ public class Graphing
 {
     public static class Point
     {
+	/*
+		This is a test class to help implement graphing problems more generally.
+		Add variables to the class as needed but keep the function form the same
+		in order to preserve effectiveness of the methods.
+	*/
+
         int num;
         
         Point [] connections;
@@ -26,6 +32,7 @@ public class Graphing
         for(int i = 0;i < graph.length;i++)
             graph[i] = new Point(i + 1);
         
+	// Test values
         graph[0].connections = new Point[2];
         graph[0].connections[0] = graph[2];
         graph[0].connections[1] = graph[4];
@@ -47,6 +54,7 @@ public class Graphing
     
     static void dfs(Point currentPoint)
     {
+	// Check the depth of every possible connection from start to finish
         if(currentPoint.visited == false)
         {
             currentPoint.visited = true;
@@ -59,6 +67,7 @@ public class Graphing
     
     static void bfs(Point currentPoint)
     {
+	// Queue the connections a given point has and check them all before reaching the end of the graph.
         Queue<Point> pointsList = new LinkedList<>();
         
         pointsList.add(currentPoint);
