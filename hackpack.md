@@ -41,19 +41,19 @@ If you want to use code from online because it's better than yours, please label
 - LCM
 	- Ian and Harrison: [math.java](code/math.java)
 - Kruskal's Algorithm
-	- **Unclaimed**
+	- Ian
 - Depth First Search
-	- Ian: [Graphing.java](code/Graphing.java)
+	- Ian: [Graph.java](code/Graph.java)
 - Breath First Search
-	- Ian: [Graphing.java](code/Graphing.java)
+	- Ian: [Graph.java](code/Graph.java)
 - Topological Sort
-	- Ian: [toposort.java](code/toposort.java)
+	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
 - Floyd-Warshall's Algorithm
-	- Harrison
+	- Harrison [Graph.java](code/Graph.java) **Unfinished**
 - Dijkstra's Algorithm
-	- Harrison
+	- Harrison [Graph.java](code/Graph.java) **Unfinished**
 - Bellman Ford's Algorithm
-	- Harrison
+	- Harrison [Graph.java](code/Graph.java) **Unfinished**
 - Network Flow
 	- **Unclaimed**
 - Matrix Chain Multiplication DP
