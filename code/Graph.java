@@ -12,14 +12,13 @@ public class Graph {
 		System.out.println("\n" + dijkstras(graph[0], graph[2])); // 2
 	}
 	public static void dfs(node currNode) {
-		dfs(currNode, new HashSet<node>());
+		dfs(currNode, new HashSet<>());
 	}
 	public static void dfs(node currNode, Set<node> visited) {
 		visited.add(currNode); // Mark as visited
-		for (node adjNode : currNode.adj) // Recurse on unvisited adjacent nodes
-			if (!visited.contains(adjNode)) {
-				dfs(adjNode, visited);
-			}
+                currNode.adj.stream().filter((adjNode) -> (!visited.contains(adjNode))).forEachOrdered((adjNode) -> {
+                    dfs(adjNode, visited);
+            }); // Recurse on unvisited adjacent nodes
 		System.out.print(currNode.data + " "); // Process node
 	}
 	public static void bfs(node startNode) {
@@ -29,36 +28,55 @@ public class Graph {
 		while (!queue.isEmpty()) {
 			node currNode = queue.poll(); // Poll next node in queue
 			System.out.print(currNode.data + " "); // Process node
-			for(node adjNode : currNode.adj) // Offer unvisited adjacent nodes
-				if (!visited.contains(adjNode)) {
-					visited.add(adjNode);
-					queue.offer(adjNode); // Enqueue adjacent node
-				}
+                        currNode.adj.stream().filter((adjNode) -> (!visited.contains(adjNode))).map((adjNode) -> {
+                            visited.add(adjNode);
+                        return adjNode;
+                    }).forEachOrdered((adjNode) -> {
+                        queue.offer(adjNode); // Enqueue adjacent node
+                    }); // Offer unvisited adjacent nodes
 		}
 	}
 	public static int dijkstras(node source, node dest) {
-		Set<node> visited = new HashSet<node>();
-		PriorityQueue<edge> pq = new PriorityQueue<edge>();
+		Set<node> visited = new HashSet<>();
+		PriorityQueue<edge> pq = new PriorityQueue<>();
 		pq.offer(new edge(source, 0));
 		while (!pq.isEmpty()) {
 			edge e = pq.poll();                       // Poll for next edge of smallest cost
 			if (visited.contains(e.target)) continue; // Skip edges to already visited nodes
 			visited.add(e.target);                    // Visit node
 			if (e.target == dest) return e.weight; // Stop if we found the target node
-			for (node adjNode : e.target.adj)         // Enqueue edges to unvisited nodes, accumulate weight
-				if (!visited.contains(adjNode))
-					pq.add(new edge(adjNode, e.weight + e.target.adjW.getOrDefault(adjNode, 1)));
+                        e.target.adj.stream().filter((adjNode) -> (!visited.contains(adjNode))).forEachOrdered((adjNode) -> {
+                            pq.add(new edge(adjNode, e.weight + e.target.adjW.getOrDefault(adjNode, 1)));
+                    }); // Enqueue edges to unvisited nodes, accumulate weight
 		}
 		return oo; // We never found our node, return infinite cost (impossible)
 	}
+        public static int kruskals(edge[] graph) {
+                boolean foundMST = false;
+                int cost = 0;
+                int edges = 0;
+                Arrays.sort(graph);
+                for(int i = 0;i < graph.length;i++) {
+			if(graph[i].target != /* ??? */) {
+                            edges++;
+                            cost += graph[i].weight;
+                            if(edges == /* ??? */) {
+                                foundMST = true;
+                                break;
+                            }
+                        }
+		}
+                if(foundMST) return cost;
+                else return 0;
+        }
 }
 class node {
 	public int data;
 	public Set<node> adj;
 	public Map<node, Integer> adjW; // Map edge to node -> weight
 	public node(int _data) {
-		data = _data; adj = new HashSet<node>();
-		adjW = new HashMap<node, Integer>();
+		data = _data; adj = new HashSet<>();
+		adjW = new HashMap<>();
 	}
 }
 class edge implements Comparable<edge> {
@@ -67,6 +85,7 @@ class edge implements Comparable<edge> {
 	public edge(node _target, int _weight) {
 		target = _target; weight = _weight;
 	}
+        @Override
 	public int compareTo(edge o) {
 		return weight - o.weight; // Smaller weights first
 	}
