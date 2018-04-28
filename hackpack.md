@@ -44,16 +44,16 @@ If you want to use code from online because it's better than yours, please label
 	- Ian: [kruskals.java](code/Graph.java) **Unfinished**
 - Depth First Search
 	- Ian: [Graph.java](code/Graph.java)
-- Breath First Search
+- Breadth First Search
 	- Ian: [Graph.java](code/Graph.java)
 - Topological Sort
 	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
 - Floyd-Warshall's Algorithm
 	- Harrison [Graph.java](code/Graph.java) **Unfinished**
 - Dijkstra's Algorithm
-	- Harrison [Graph.java](code/Graph.java) **Unfinished**
+	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
 - Bellman Ford's Algorithm
-	- Harrison [Graph.java](code/Graph.java) **Unfinished**
+	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
 - Network Flow
 	- **Unclaimed**
 - Matrix Chain Multiplication DP
@@ -68,8 +68,8 @@ If you want to use code from online because it's better than yours, please label
 	- **Unclaimed**
 - Polygon Area
 	- **Unclaimed**
-- Convex Hull
-	- Harrison
+- Convex Hull (Graham Scan)
+	- Harrison: [grahamscan.java](code/grahamscan.java)
 - Point in Polygon
 	- **Unclaimed**
 
