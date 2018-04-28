@@ -59,7 +59,7 @@ If you want to use code from online because it's better than yours, please label
 - Matrix Chain Multiplication DP
 	- **Unclaimed**
 - Longest Common Subsequence DP
-	- **Unclaimed**
+	- Ian: [lcs.java](code/lcs.java)
 - Knapsack DP
 	- Ian: [knapsack.java](code/knapsack.java)
 - Line-Line Intersection
