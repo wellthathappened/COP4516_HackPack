@@ -1,5 +1,5 @@
 import java.util.*;
-public class grahamscan {
+public class GrahamScan {
 	public static final int CW = 1; public static final int CCW = 2;
 	public static void main(String[] args) {
 		pt[] pts = {new pt(1, 1), new pt(3, 1), new pt(2, 2), new pt(3, 3), new pt(1, 3)};

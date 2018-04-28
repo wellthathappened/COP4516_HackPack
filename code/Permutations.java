@@ -1,4 +1,4 @@
-public class permutations {
+public class Permutations {
 	public static void main(String[] args) {
 		int[] values = {1, 2, 3, 4};
 		int[] perm = new int[values.length];

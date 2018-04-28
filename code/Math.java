@@ -1,4 +1,4 @@
-public class math {
+public class Math {
 	public static void main(String[] args) {
 		System.out.println(gcd(960, 360)); // 120
 		System.out.println(lcm(134, 285)); } // 38190

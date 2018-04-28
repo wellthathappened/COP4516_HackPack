@@ -28,18 +28,18 @@ If you want to use code from online because it's better than yours, please label
 - Please use a space-minimizing code style, as outlined in [style.md](style.md)! (ie, don't place curly braces on their own lines, avoid blank lines, etc)
 - In the "Required Elements" list below, claim one by putting your name in the sublist below it.
 - Place the relevant filename of that code next to your name (eg. Harrison: bellmanford.java)
-- Protip: create a link to the file by using: `[filename.java](code/filename.java)`
+- Protip: create a link to the file by using: `[Filename.java](code/Filename.java)`
 
 ## Required Elements
 
 - Permutation generation
-	- Ian and Harrison: [permutations.java](code/permutations.java)
+	- Ian and Harrison: [Permutations.java](code/Permutations.java)
 - Combination generation
-	- Ian and Harrison [permutations.java](code/permutations.java)
+	- Ian and Harrison [Permutations.java](code/Permutations.java)
 - GCD
-	- Ian and Harrison: [math.java](code/math.java)
+	- Ian and Harrison: [Math.java](code/Math.java)
 - LCM
-	- Ian and Harrison: [math.java](code/math.java)
+	- Ian and Harrison: [Math.java](code/Math.java)
 - Kruskal's Algorithm
 	- Ian and whoever can fix it: [kruskals.java](code/Graph.java) **Unfinished**
 - Depth First Search
@@ -57,11 +57,11 @@ If you want to use code from online because it's better than yours, please label
 - Network Flow
 	- Harrison
 - Matrix Chain Multiplication DP
-	- Ian: [matrixChain.java](code/matrixChain.java)
+	- Ian: [MatrixChain.java](code/MatrixChain.java)
 - Longest Common Subsequence DP
-	- Ian: [lcs.java](code/lcs.java)
+	- Ian: [LCS.java](code/LCS.java)
 - Knapsack DP
-	- Ian: [knapsack.java](code/knapsack.java)
+	- Ian: [Knapsack.java](code/Knapsack.java)
 - Line-Line Intersection
 	- Kelton
 - Line-Plane Intersection
@@ -69,7 +69,7 @@ If you want to use code from online because it's better than yours, please label
 - Polygon Area
 	- Kelton
 - Convex Hull (Graham Scan)
-	- Harrison: [grahamscan.java](code/grahamscan.java)
+	- Harrison: [GrahamScan.java](code/GrahamScan.java)
 - Point in Polygon
 	- Kelton
 
