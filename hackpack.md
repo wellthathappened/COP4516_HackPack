@@ -47,9 +47,9 @@ If you want to use code from online because it's better than yours, please label
 - Breadth First Search
 	- Ian: [Graph.java](code/Graph.java)
 - Topological Sort
-	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
+	- Harrison: [Graph.java](code/Graph.java)
 - Floyd-Warshall's Algorithm
-	- Harrison [Graph.java](code/Graph.java) **Unfinished**
+	- Harrison [Graph.java](code/Graph.java)
 - Dijkstra's Algorithm
 	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
 - Bellman Ford's Algorithm
