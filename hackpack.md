@@ -33,7 +33,7 @@ If you want to use code from online because it's better than yours, please label
 ## Required Elements
 
 - Permutation generation
-	- Ian: [permutations.java](code/permutations.java)
+	- Ian and Harrison: [permutations.java](code/permutations.java)
 - Combination generation
 	- Ian: [combinations.java](code/combinations.java)
 - GCD
