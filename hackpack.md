@@ -63,15 +63,15 @@ If you want to use code from online because it's better than yours, please label
 - Knapsack DP
 	- Ian: [knapsack.java](code/knapsack.java)
 - Line-Line Intersection
-	- **Unclaimed**
+	- Kelton
 - Line-Plane Intersection
-	- **Unclaimed**
+	- Kelton
 - Polygon Area
-	- **Unclaimed**
+	- Kelton
 - Convex Hull (Graham Scan)
 	- Harrison: [grahamscan.java](code/grahamscan.java)
 - Point in Polygon
-	- **Unclaimed**
+	- Kelton
 
 ## Other Elements
 
