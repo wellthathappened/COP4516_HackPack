@@ -51,7 +51,7 @@ If you want to use code from online because it's better than yours, please label
 - Floyd-Warshall's Algorithm
 	- Harrison [Graph.java](code/Graph.java)
 - Dijkstra's Algorithm
-	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
+	- Harrison: [Graph.java](code/Graph.java)
 - Bellman Ford's Algorithm
 	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
 - Network Flow
