@@ -41,7 +41,7 @@ If you want to use code from online because it's better than yours, please label
 - LCM
 	- Ian and Harrison: [math.java](code/math.java)
 - Kruskal's Algorithm
-	- Ian: [kruskals.java](code/Graph.java) **Unfinished**
+	- Ian and whoever can fix it: [kruskals.java](code/Graph.java) **Unfinished**
 - Depth First Search
 	- Ian: [Graph.java](code/Graph.java)
 - Breadth First Search
@@ -57,7 +57,7 @@ If you want to use code from online because it's better than yours, please label
 - Network Flow
 	- **Unclaimed**
 - Matrix Chain Multiplication DP
-	- **Unclaimed**
+	- Ian: [matrixChain.java(code/matrixChain.java) **Unfinished**
 - Longest Common Subsequence DP
 	- Ian: [lcs.java](code/lcs.java)
 - Knapsack DP
