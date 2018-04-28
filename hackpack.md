@@ -25,7 +25,7 @@ If you want to use code from online because it's better than yours, please label
 ## Repository Guidelines
 
 - Place all contest code in the "code" directory.
-- Keep a space-minimizing coding style (ie, don't place curly braces on their own lines, avoid blank lines, etc)
+- Please use a space-minimizing code style, as outlined in [style.md](style.md)! (ie, don't place curly braces on their own lines, avoid blank lines, etc)
 - In the "Required Elements" list below, claim one by putting your name in the sublist below it.
 - Place the relevant filename of that code next to your name (eg. Harrison: bellmanford.java)
 - Protip: create a link to the file by using: `[filename.java](code/filename.java)`
@@ -35,7 +35,7 @@ If you want to use code from online because it's better than yours, please label
 - Permutation generation
 	- Ian and Harrison: [permutations.java](code/permutations.java)
 - Combination generation
-	- Ian: [combinations.java](code/combinations.java)
+	- Ian and Harrison [permutations.java](code/permutations.java)
 - GCD
 	- Ian and Harrison: [math.java](code/math.java)
 - LCM
