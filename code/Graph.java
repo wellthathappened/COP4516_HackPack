@@ -51,24 +51,17 @@ public class Graph {
 		}
 		return oo; // We never found our node, return infinite cost (impossible)
 	}
-        public static int kruskals(edge[] graph) {
-                boolean foundMST = false;
-                int cost = 0;
+        public static int kruskals(int size, edge[] graph) {
+                int totalWeight = 0;
                 int edges = 0;
-                Arrays.sort(graph);
-                for(int i = 0;i < graph.length;i++) {
-			if(graph[i].target != /* ??? */) {
-                            edges++;
-                            cost += graph[i].weight;
-                            if(edges == /* ??? */) {
-                                foundMST = true;
-                                break;
-                            }
-                        }
-		}
-                if(foundMST) return cost;
-                else return 0;
-        }
+                Arrays.sort(graph);                                // Sort the edge weights in increasing order.
+                for(int i = 0;i < graph.length;i++) {              // Check every edge to see if they are selected.
+                    if(/* two nodes are not already connected */) {// If the given edges are not selected,
+                        edges++;                                   // add them to the mst,
+                        totalWeight += graph[i].weight;            // and tally their weight.
+                        if((edges + 1) == size)                    // If we ever breach our size limit,
+                            return -1; } }                         // We no longer have an MST. Signify with a -1 "weight".
+                return totalWeight; }                              // Report the cost of all selected edge weights.
 }
 class node {
 	public int data;
