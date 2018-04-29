@@ -53,7 +53,7 @@ If you want to use code from online because it's better than yours, please label
 - Dijkstra's Algorithm
 	- Harrison: [Graph.java](code/Graph.java)
 - Bellman Ford's Algorithm
-	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
+	- Harrison: [Graph.java](code/Graph.java)
 - Network Flow
 	- Harrison
 - Matrix Chain Multiplication DP

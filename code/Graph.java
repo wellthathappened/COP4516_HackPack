@@ -34,6 +34,8 @@ public class Graph {
 				disjointSet[10] = new edge(disjointGraph[5], disjointGraph[6], 9);
 				System.out.println(kruskals(disjointGraph.length, disjointSet)); // 39*/
 
+		System.out.println("Bellman-Ford");
+		bellmanFord(graph, graph[0]);
 		System.out.println("Running Floyd-Warshall");
 		floydWarshall(graph);
 		System.out.println("Running Topo Sort");
@@ -57,10 +59,10 @@ public class Graph {
 				if (!visited.contains(adjNode)) {
 					visited.add(adjNode);
 					queue.offer(adjNode); } } }
-	public static int dijkstras(node source, node dest) {
+	public static int dijkstras(node source, node dest) {   // O(|E| + |V| log |V|) Dist from source node to dest node (no negative edges)
 		Set<node> visited = new HashSet<>();
-		PriorityQueue<edge> pq = new PriorityQueue<>();
-		pq.offer(new edge(null, source, 0));
+		PriorityQueue<edge> pq = new PriorityQueue<>();     // PriorityQueue improves runtime
+		pq.offer(new edge(source, 0));
 		while (!pq.isEmpty()) {
 			edge e = pq.poll();                             // Poll for next edge of smallest cost
 			if (visited.contains(e.target)) continue;       // Skip edges to already visited nodes
@@ -68,9 +70,20 @@ public class Graph {
 			if (e.target == dest) return e.weight;          // Stop if we found the target node
 			for (node adjNode : e.target.adj)               // Enqueue edges to unvisited nodes, add to weight
 				if (!visited.contains(adjNode))
-					pq.add(new edge(e.target, adjNode, e.weight + e.target.adjW.getOrDefault(adjNode, 1))); }
+					pq.add(new edge(adjNode, e.weight + e.target.adjW.getOrDefault(adjNode, 1))); }
 		return oo; }                                        // Destination not found, return infinite cost (impossible)
-	public static void floydWarshall(node[] graph) {
+	public static void bellmanFord(node[] graph, node source) { // O(|V|*|E|) Dist from source node to all nodes (no neg. cycles)
+		Map<node, Integer> dist = new HashMap<node, Integer>(); // Distance from source node to given node
+		Map<node, node> pred = new HashMap<node, node>();   // Predecessor nodes in the path to some destination node
+		for (node n : graph) dist.put(n, oo); dist.put(source, 0); // Initialize distances to infinity, except source (0)
+		for (int i = 0; i < graph.length - 1; i++) { boolean stop = true;
+			for (node u : graph) for (node v : u.adj) {     // Iterate over all edges
+					int w = u.adjW.getOrDefault(v, 1);
+					if (dist.get(u) + w < dist.get(v)) { stop = false;
+						dist.put(v, dist.get(u) + w);
+						pred.put(v, u); } }
+			if (stop) break; } }                            // Optimisation: Stop early if no change was made
+	public static void floydWarshall(node[] graph) {        // O(|V|^3) (SLOW!) Dist from all nodes to all nodes
 		Map<node, Map<node, Integer>> dist = new HashMap<node, Map<node, Integer>>();
 		Map<node, Map<node, node>> next = new HashMap<node, Map<node, node>>();
 		for (node n : graph) {
@@ -89,13 +102,12 @@ public class Graph {
 					if (sum < dist.get(i).get(j)) {         // Update if shorter path found
 						dist.get(i).put(j, sum);
 						next.get(i).put(j, next.get(i).get(k)); } } }
-	public static List<node> topoSort(node[] graph) {
+	public static List<node> topoSort(node[] graph) {       // Node ordering that does not violate edge directions
 		Map<node, Integer> numIncEdges = new HashMap<node, Integer>();
 		for (node n : graph) {                                // Count incoming edges for each node
 			numIncEdges.put(n, numIncEdges.getOrDefault(n, 0));
 			for (node adj : n.adj)
-				numIncEdges.put(adj, numIncEdges.getOrDefault(adj, 0) + 1);
-		}
+				numIncEdges.put(adj, numIncEdges.getOrDefault(adj, 0) + 1); }
 		Queue<node> queue = new ArrayDeque<node>();         // Also consider PriorityQueue
 		for (node n : numIncEdges.keySet())                 // Initialize with nodes w/ 0 incoming edges
 			if (numIncEdges.get(n) == 0) queue.offer(n);
@@ -118,7 +130,6 @@ public class Graph {
 			totalWeight += graph[i].weight;                 // and tally their weight.
 			if(edges == (graph.length - 1)) return -1; } }  // If we ever breach our size limit, we no longer have an MST. Signify with a -1 "weight".
 		return totalWeight; }                               // Report cost of all selected edge weights.
-	}
 }
 class node {
 	public int data;
