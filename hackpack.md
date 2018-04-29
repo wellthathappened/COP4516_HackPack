@@ -41,7 +41,7 @@ If you want to use code from online because it's better than yours, please label
 - LCM
 	- Ian and Harrison: [Math.java](code/Math.java)
 - Kruskal's Algorithm
-	- Ian and whoever can fix it: [kruskals.java](code/Graph.java) **Unfinished**
+	- Ian and whoever can fix it: [Graph.java](code/Graph.java) **Unfinished**
 - Depth First Search
 	- Ian: [Graph.java](code/Graph.java)
 - Breadth First Search
@@ -75,5 +75,5 @@ If you want to use code from online because it's better than yours, please label
 
 ## Other Elements
 
-- Java collections (abstract List, Set, etc. as well as concrete ArrayList, HashSet, etc.)
-	- Harrison
+- Java collections (abstract: List, Set; concrete: ArrayList, LinkedList, ArrayDeque, HashSet, TreeSet, HashMap, TreeMap, etc.)
+	- Harrison: [CollectionsNotes.java](code/CollectionsNotes.java)
