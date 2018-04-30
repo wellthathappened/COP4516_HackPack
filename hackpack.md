@@ -56,7 +56,7 @@ If you want to use code from online because it's better than yours, please label
 - Bellman Ford's Algorithm
 	- Harrison: [Graph.java](code/Graph.java)
 - Network Flow
-	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
+	- Harrison: [Graph.java](code/Graph.java)
 - Matrix Chain Multiplication DP
 	- Ian: [MatrixChain.java](code/MatrixChain.java)
 - Longest Common Subsequence DP

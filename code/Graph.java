@@ -1,46 +1,19 @@
-import java.util.*;
+import java.util.*; import java.lang.Math;
 public class Graph {
 	public static int oo = (int) 1e9; // Infinity (∞) placeholder
 	public static void main(String[] args) {
 		node[] graph = new node[5];
 		for (int i = 0; i < graph.length; i++) graph[i] = new node(i);
-		/*		node[] testParent1 = {graph[0]};
-				node[] testParent2 = {graph[1]};
-				graph[0] = new node(null, 0);
-				graph[1] = new node(testParent1, 1);
-				graph[2] = new node(testParent2, 2);
-				graph[3] = new node(testParent1, 3);
-				graph[4] = new node(testParent1, 4);*/
  		graph[0].adj.add(graph[1]); graph[1].adj.add(graph[2]);
 		graph[0].adj.add(graph[3]); graph[0].adj.add(graph[4]);
-		dfs(graph[0]); // 3 4 2 1 0 
-		System.out.println();
-		bfs(graph[0]); // 0 3 4 1 2
-		System.out.println("\n" + dijkstras(graph[0], graph[2])); // 2
-		/*		node[] disjointGraph = new node[7];			 // Begin test case for Kruskal's
-				edge[] disjointSet = new edge[11];
-				for(int i = 0;i < disjointGraph.length;i++)
-					disjointGraph[i] = new node(null, i);
-				disjointSet[0] = new edge(disjointGraph[0], disjointGraph[1], 7);
-				disjointSet[1] = new edge(disjointGraph[0], disjointGraph[3], 5);
-				disjointSet[2] = new edge(disjointGraph[1], disjointGraph[2], 8);
-				disjointSet[3] = new edge(disjointGraph[1], disjointGraph[3], 9);
-				disjointSet[4] = new edge(disjointGraph[1], disjointGraph[4], 7);
-				disjointSet[5] = new edge(disjointGraph[2], disjointGraph[4], 5);
-				disjointSet[6] = new edge(disjointGraph[3], disjointGraph[4], 15);
-				disjointSet[7] = new edge(disjointGraph[3], disjointGraph[5], 6);
-				disjointSet[8] = new edge(disjointGraph[4], disjointGraph[5], 8);
-				disjointSet[9] = new edge(disjointGraph[4], disjointGraph[6], 11);
-				disjointSet[10] = new edge(disjointGraph[5], disjointGraph[6], 9);
-				System.out.println(kruskals(disjointGraph.length, disjointSet)); // 39*/
-
-		System.out.println("Bellman-Ford");
-		bellmanFord(graph, graph[0]);
-		System.out.println("Running Floyd-Warshall");
-		floydWarshall(graph);
-		System.out.println("Running Topo Sort");
-		List<node> topo = topoSort(graph);
-		for (node n : topo) System.out.format("%d ", n.data); System.out.println(); }
+		System.out.print("DFS: "); dfs(graph[0]); System.out.println(); // 3 4 2 1 0 
+		System.out.print("BFS: "); bfs(graph[0]); System.out.println(); // 0 3 4 1 2
+		System.out.println("Dijkstra's: " + dijkstras(graph[0], graph[2])); // 2
+		System.out.println("Bellman-Ford"); bellmanFord(graph, graph[0]);
+		System.out.println("Floyd-Warshall"); floydWarshall(graph);
+		System.out.print("Topo Sort: "); List<node> topo = topoSort(graph);
+		for (node n : topo) System.out.format("%d ", n.data); System.out.println();
+		System.out.println("Ford Fulkerson: " + fordFulkerson(graph, graph[0], graph[2])); }
 	public static void dfs(node currNode) { dfs(currNode, new HashSet<node>()); }
 	public static void dfs(node currNode, Set<node> visited) {
 		visited.add(currNode);                               // Mark start node visited
@@ -119,9 +92,33 @@ public class Graph {
 				numIncEdges.put(adj, numIncEdges.get(adj) - 1);
 				if (numIncEdges.get(adj) == 0) queue.offer(adj); } } // No more edges - enqueue
 		return topoSort.size() == graph.length ? topoSort : null; } // If all nodes processed, we have valid toposort
+	public static int fordFulkerson(node[] graph, node source, node sink) {
+		Set<node> visited = new HashSet<node>();
+		Map<node, Map<node, Integer>> cap = new HashMap<>();// Initialize cap with edge weights (max flow)
+		for (node n : graph) {
+			cap.put(n, new HashMap<node, Integer>());
+			for (node adj : n.adj)
+				cap.get(n).put(adj, n.adjW.getOrDefault(adj, 1)); }
+		int flow = 0;
+		while (true) {
+			visited.clear();
+			int res = fordFulkersonDFS(cap, source, sink, visited, oo);
+			if (res == 0) break;
+			flow += res; }
+		return flow; }
+	public static int fordFulkersonDFS(Map<node, Map<node, Integer>> cap, node node, node sink, Set<node> visited, int min) {
+		if (node == sink) return min;
+		if (visited.contains(node)) return 0; visited.add(node);
+		int flow = 0;
+		for (node adj : node.adj) {
+			flow = fordFulkersonDFS(cap, adj, sink, visited, Math.min(cap.get(node).getOrDefault(adj, 0), min));
+			if (flow > 0) {
+				cap.get(node).put(adj, cap.get(node).getOrDefault(adj, 0) - flow);     // cap[v][i] -= flow
+				cap.get(adj).put(node, cap.get(adj).getOrDefault(node, 0) + flow);     // cap[i][v] += flow
+				return flow; } }
+		return 0; }
 	public static int kruskals(int size, edge[] graph) {
-		int totalWeight = 0;
-		int edges = 0;
+		int totalWeight = 0; int edges = 0;
 		ArrayList<edge> mst = new ArrayList<>();
 		Arrays.sort(graph);                                 // Sort the edge weights in increasing order.
 		for(int i = 0;i < size;i++) {                       // Check every edge to see if they are selected.
@@ -136,8 +133,8 @@ class node {
 	public Set<node> adj;                                   // Set of adjacent nodes
 	public Map<node, Integer> adjW;                         // Map: adjacent node -> weight of edge to that node
 	public node(int _data) {
-		data = _data; adj = new HashSet<>();
-		adjW = new HashMap<>(); } }
+		data = _data; adj = new HashSet<node>();
+		adjW = new HashMap<node, Integer>(); } }
 class edge implements Comparable<edge> {
 	public node target;
 	public int weight;
