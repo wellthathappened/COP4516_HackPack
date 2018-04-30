@@ -79,3 +79,6 @@ If you want to use code from online because it's better than yours, please label
 	- Harrison: [CollectionsNotes.java](code/CollectionsNotes.java)
 - Binary Search
 	- Kelton: [BinarySearch.java](code/BinarySearch.java)
+- Contest Case Structures
+	- Ian: [NCases.java](code/NCases.java)
+	- Ian: [EndCondition.java](code/EndCondition.java)
