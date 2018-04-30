@@ -41,7 +41,7 @@ If you want to use code from online because it's better than yours, please label
 - LCM
 	- Ian and Harrison: [Math.java](code/Math.java)
 - Kruskal's Algorithm
-	- Ian and whoever can fix it: [Graph.java](code/Graph.java) **Unfinished**
+	- Ian: [Graph.java](code/Graph.java) **Unfinished**
 - Depth First Search
 	- Ian: [Graph.java](code/Graph.java)
 - Breadth First Search
@@ -55,7 +55,7 @@ If you want to use code from online because it's better than yours, please label
 - Bellman Ford's Algorithm
 	- Harrison: [Graph.java](code/Graph.java)
 - Network Flow
-	- Harrison
+	- Harrison: [Graph.java](code/Graph.java) **Unfinished**
 - Matrix Chain Multiplication DP
 	- Ian: [MatrixChain.java](code/MatrixChain.java)
 - Longest Common Subsequence DP
@@ -63,17 +63,19 @@ If you want to use code from online because it's better than yours, please label
 - Knapsack DP
 	- Ian: [Knapsack.java](code/Knapsack.java)
 - Line-Line Intersection
-	- Kelton
+	- Kelton: [Geometry.java](code/Geometry.java)
 - Line-Plane Intersection
-	- Kelton
+	- Kelton: [Geometry.java](code/Geometry.java)
 - Polygon Area
-	- Kelton
+	- Kelton: [Geometry.java](code/Geometry.java)
 - Convex Hull (Graham Scan)
 	- Harrison: [GrahamScan.java](code/GrahamScan.java)
 - Point in Polygon
-	- Kelton
+	- Kelton: [Geometry.java](code/Geometry.java)
 
 ## Other Elements
 
 - Java collections (abstract: List, Set; concrete: ArrayList, LinkedList, ArrayDeque, HashSet, TreeSet, HashMap, TreeMap, etc.)
 	- Harrison: [CollectionsNotes.java](code/CollectionsNotes.java)
+- Binary Search
+	- Kelton: [BinarySearch.java](code/BinarySearch.java)
